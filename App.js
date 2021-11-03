@@ -1,4 +1,5 @@
 import { StatusBar } from 'expo-status-bar';
+import Constants from 'expo-constants';
 import React from 'react';
 import { Dimensions, ImageBackground, StyleSheet, Text, View, TouchableOpacity } from 'react-native';
 
@@ -9,16 +10,25 @@ export default function App() {
     <View>
       <ImageBackground source={backgroundImage} resizeMode="cover" style={styles.background}>
         <View style={styles.container}>
-          <View style={{flex: 1, alignItems: "center"}}>
-            <Text style={{ color: '#fff', fontSize: "4rem", fontWeight: 600 }}>C2C</Text>
-            <Text style={{ color: '#fff', fontSize: "2rem", fontWeight: 200 }}>Couch-2-Calisthenics</Text>
+          <StatusBar style="transparent" />
+          <View style={{ flex: 1, alignItems: "center" }}>
+            <Text style={{ color: '#fff', fontSize: 60, fontWeight: "600" }}>C2C</Text>
+            <Text style={{ color: '#fff', fontSize: 25, fontWeight: "200" }}>Couch To Calisthenics</Text>
           </View>
-          <StatusBar style="auto" />
-          <TouchableOpacity
-            onPress={() => alert('Hello, world!')}
-            style={{ backgroundColor: '#27e', padding: '15px', margin: '10px', borderRadius: "3px", }}>
-            <Text style={{ fontSize: 25, color: '#fff' }}>Login</Text>
-          </TouchableOpacity>
+          <View>
+            <TouchableOpacity
+              onPress={() => alert('TODO: create login screen')}
+              style={{ backgroundColor: '#27e', borderRadius: 20, paddingHorizontal: 60, paddingVertical: 10 }}>
+              <Text style={{ fontSize: 25, color: '#fff' }}>Login</Text>
+            </TouchableOpacity>
+            <TouchableOpacity
+              onPress={() => alert('TODO: create sign up screen')}
+              style={{ padding: 15, borderRadius: 20, alignItems: "center" }}>
+              <Text style={{ fontSize: 25, color: "#fff" }}>
+                Sign Up
+              </Text>
+            </TouchableOpacity>
+          </View>
         </View>
       </ImageBackground>
     </View>
@@ -28,16 +38,14 @@ export default function App() {
 const styles = StyleSheet.create({
   background: {
     width: width,
-    height: height,
+    height: height + Constants.statusBarHeight,
   },
   container: {
     backgroundColor: "#0008",
-    padding: "30px",
+    paddingVertical: Constants.statusBarHeight + 10,
     flex: 1,
     justifyContent: "space-between",
     alignItems: "center",
-    // borderWidth: "4px",
-    // borderColor: "pink",
   },
 
 });
