@@ -6,7 +6,7 @@ import { StyleSheet, View, TouchableOpacity, Text, Dimensions, ImageBackground, 
 const backgroundImage = { uri: "https://images.unsplash.com/photo-1593455026613-e30bfc0a54a9?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8Y2FsaXN0aGVuaWNzfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=60" };
 const { width, height } = Dimensions.get('window');
 
-export default function SignedOut({ navigation }) {
+export default function Login({ navigation }) {
     return (
         <View>
             <ImageBackground source={backgroundImage} resizeMode="cover" style={styles.background}>
@@ -31,7 +31,7 @@ export default function SignedOut({ navigation }) {
                         </TouchableOpacity>
                         <TouchableOpacity style={{padding: 15,}}>
                         <Text style={{ fontSize: 15, color: "#fff", textAlign: "center", textDecorationLine: "underline"}}
-                            onPress={()=>{navigation.replace('Homepage')}}
+                            onPress={()=>{navigation.replace('Root')}}
                         >
                             Skip for now
                         </Text>
