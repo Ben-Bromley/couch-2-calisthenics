@@ -1,13 +1,13 @@
 import React from "react";
 import Svg, { Path } from "react-native-svg";
 
-export default function HomeIcon() {
+export default function HomeIcon(props) {
     return (
         <Svg
             xmlns="http://www.w3.org/2000/svg"
-            width="50"
-            height="50"
-            fill="#FFF"
+            width="25"
+            height="25"
+            fill={props.color}
             viewBox="0 0 24 24"
         >
             <Path fill="none" d="M0 0h24v24H0V0z"></Path>
