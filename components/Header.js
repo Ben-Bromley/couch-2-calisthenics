@@ -11,16 +11,11 @@ export default function Header() {
 }
 
 const styles = StyleSheet.create({
-    title: {
-        color: "#fff",
-        fontSize: 40,
-        fontWeight: "600",
-    },
+    title: {color: "#fff",fontSize: 35,fontWeight: "800",},
     header: {
         backgroundColor: "#27a",
-        height: Constants.statusBarHeight + 70,
-        paddingTop: Constants.statusBarHeight,
-        // flex: 1,
+        height: Constants.statusBarHeight + 50,
+        paddingTop: Constants.statusBarHeight - 10,
         justifyContent: "center",
         alignItems: "center"
     },
