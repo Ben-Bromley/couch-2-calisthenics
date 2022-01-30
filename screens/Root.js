@@ -23,6 +23,7 @@ export default function Root() {
             // tabBarLabel: route.name==='Home'?'':route.name,
             tabBarActiveTintColor: '#27a',
             tabBarInactiveTintColor: 'gray',
+            tabBarShowLabel: false,
         })}>
             <Tab.Screen name="Home" options={{ headerShown: false }}>
                 {() => <WorkoutStack.Navigator>
@@ -31,7 +32,7 @@ export default function Root() {
                     <WorkoutStack.Screen name="Workout Details" component={WorkoutDetails} options={({ route }) => ({ title: route.params.workout })} />
                 </WorkoutStack.Navigator>}
             </Tab.Screen>
-            <Tab.Screen name="Account" component={Account} options={{ headerShown: false }} />
+            {/* <Tab.Screen name="Account" component={Account} options={{ headerShown: false }} /> */}
         </Tab.Navigator>
     )
 }
