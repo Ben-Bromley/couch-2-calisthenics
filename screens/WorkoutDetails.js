@@ -1,17 +1,22 @@
-import { View, Text, ImageBackground, StyleSheet } from 'react-native';
+import { ScrollView, View, Text, ImageBackground, StyleSheet } from 'react-native';
 import React from 'react';
 
 export default function WorkoutDetails(props) {
+    // let [workout, image, body] = props.route.params;
+    let title = props.route.params.title;
+    let image = props.route.params.image;
+    let body = props.route.params.body;
+
     return (
         <View>
-            <ImageBackground style={styles.bg} source={{ uri: props.route.params.image }}>
+            <ImageBackground style={styles.bg} source={{ uri: image }}>
                 <View style={styles.overlay}>
-                    <Text style={styles.title}>{props.route.params.workout}</Text>
+                    <Text style={styles.title}>{title}</Text>
                 </View>
             </ImageBackground>
-            <View style={styles.container}>
-                <Text>{'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut turpis ipsum, vestibulum eget tortor aliquet, sollicitudin placerat ipsum. Mauris eu felis pellentesque, ornare nisl ac, maximus leo. \n \nAliquam euismod enim sit amet libero tincidunt condimentum. Praesent fermentum tincidunt neque, nec pharetra turpis aliquam nec. Quisque volutpat mauris porta lobortis venenatis. Integer in purus nibh. Morbi malesuada enim lorem, ut dictum sem egestas vitae. \n \nCurabitur condimentum rutrum mi id gravida. Maecenas sed tincidunt leo, quis iaculis metus. Duis molestie, odio ac luctus commodo, ipsum diam eleifend urna, in volutpat ante dolor vel justo. Morbi congue arcu risus, id placerat est semper sit amet. Suspendisse consectetur nisl a euismod fringilla. Phasellus ultricies facilisis egestas. \n \nDonec enim sapien, tincidunt vel commodo et, interdum a mauris. Suspendisse massa ligula, sodales non egestas sed, malesuada vitae metus. Aliquam tortor massa, lacinia sed justo vitae, sodales tempus sapien.'}</Text>
-            </View>
+            <ScrollView style={styles.container}>
+                <Text>{body}</Text>
+            </ScrollView>
         </View>
     );
 }
@@ -21,6 +26,9 @@ const styles = StyleSheet.create({
     overlay: { backgroundColor: "#0008", height: 200, padding: 20, },
     title: { color: "#fff", marginTop: "auto", fontSize: 30 },
     container: {
-        padding: 20,
+        paddingHorizontal: 20,
+        paddingTop: 20,
+        paddingBottom: 180,
+        marginBottom: 200,
     }
 })
